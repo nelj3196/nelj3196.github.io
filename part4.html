@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="description" content="homeword 2 part4">
+<script>
+
+function renderTable() {
+
+var displayElements = "";
+
+displayElements += "<table>";
+displayElements += "<tr><th>Number</th><th>Sqare</th><th>Cube</th></tr>";
+displayElements += "<tr><td>1</td><td>"+ Math.pow(1,2)+ "</td><td>" + Math.pow(1,3 )+"</td></tr>";
+displayElements += "<tr><td>2</td><td>"+ Math.pow(2,2)+ "</td><td>" + Math.pow(2,3 )+"</td></tr>";
+displayElements += "<tr><td>3</td><td>"+ Math.pow(3,2)+ "</td><td>" + Math.pow(3,3 )+"</td></tr>";
+displayElements += "<tr><td>4</td><td>"+ Math.pow(4,2)+ "</td><td>" + Math.pow(4,3 )+"</td></tr>";
+displayElements += "<tr><td>5</td><td>"+ Math.pow(5,2)+ "</td><td>" + Math.pow(5,3 )+"</td></tr>";
+displayElements += "<tr><td>6</td><td>"+ Math.pow(6,2)+ "</td><td>" + Math.pow(6, 3)+"</td></tr>";
+displayElements += "</table>";
+
+document.getElementById("sct").innerHTML = displayElements;
+
+}
+
+</script>
+
+
+
+</head>
+
+<body>
+<section class="body">
+<h3> Output Table Calculations</h3>
+
+<form>
+<input type="button" value="Table" onclick="renderTable();">
+</form>
+
+<br><br>
+<div id="sct"></div>
+</section>
+</body>
+</html>

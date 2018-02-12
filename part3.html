@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework Part 3</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Homework part3">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+
+  </head>
+  <body>
+    <form id="formDisplay">
+      <label>First Number</label>
+      <input type="number" id="firstNumber"><br>
+
+      <label>Second Number</label>
+      <input type="number" id="secondNumber"><br>
+
+      <label>Third Number</label>
+      <input type="number" id="thirdNumber"><br>
+
+      <label>Fourth Number</label>
+      <input type="number" id="fourthNumber"><br>
+
+      <label>fifthNumber</label>
+      <input type="number" id="fifthNumber"><br>
+
+      <input type="button" onclick="determineNumber()" value="determineNumber">
+      <input type="reset" value="Reset">
+  </form>
+
+  <h2>Results:</h2>
+  <button type="button" id="fade">Fade the Results</button>
+  <div id="result"></div>
+
+
+<script>
+
+  function determineNumber() {
+    let setNumber = 0;
+    let setNumberZero = 0;
+    let setNegativeNumber = 0;
+    const numbers = [];
+
+  document.querySelectorAll('input')
+    .forEach(({value}) => {
+      // console.log(value);
+      const val = parseInt(value);
+      if (val > 0) setNumber++;
+      else if (val === 0) setNumberZero++;
+      else if (val < 0) setNegativeNumber++;
+
+      if (!isNaN(val)) numbers.push(val);
+    });
+let result = numbers.join(', ') + '<br>';
+result += 'positive :' + setNumber + '<br>';
+result += 'Zeros: ' + setNumberZero + '<br>';
+result += 'Negative: ' + setNegativeNumber + '<br>';
+document.getElementById('result').innerHTML = result;
+}
+$(document).ready(function () {
+$('#fade').click(function(){
+$('#result').fadeTo('slow', 0.20);
+});
+});
+
+
+        </script>
+  </body>
+</html>
